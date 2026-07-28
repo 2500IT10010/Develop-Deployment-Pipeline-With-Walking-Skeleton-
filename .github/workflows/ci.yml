@@ -20,12 +20,12 @@ jobs:
         with:
           node-version: '20'
 
-      # Step 3: Initialize a minimal package.json & install Jest dynamically
-      - name: Install Jest
+      # Step 3: Initialize a minimal package.json & install Jest + jsdom
+      - name: Install Jest + jsdom
         run: |
           npm init -y
-          npm install jest
+          npm install jest jest-environment-jsdom
 
-      # Step 4: Execute Jest on your test file
+      # Step 4: Execute Jest on your test file with jsdom environment
       - name: Run Jest tests
-        run: npx jest login.test.js
+        run: npx jest login.test.js --env=jsdom
