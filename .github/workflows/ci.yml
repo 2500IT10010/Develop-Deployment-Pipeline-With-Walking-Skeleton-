@@ -28,4 +28,4 @@ jobs:
 
       # Step 4: Execute Jest on your test file
       - name: Run Jest tests
-        run: npx jest auth.test.js
+        run: npx jest login.test.js
